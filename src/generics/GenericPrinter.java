@@ -19,6 +19,6 @@ public class GenericPrinter<T extends Material> {
 	
 	//이거 왜 오류지???
 	public void printing() {
-		material doPrinting();
+		material.doPrinting();
 	}
 }
