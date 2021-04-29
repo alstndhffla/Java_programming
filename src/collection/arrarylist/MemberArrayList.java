@@ -1,6 +1,8 @@
 package collection.arrarylist;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+
 import collection.Member;	//멤버 클래스는 컬렉션 패키지 안에 있으므로 임포트해줘야함.
 
 public class MemberArrayList {
@@ -26,16 +28,32 @@ public class MemberArrayList {
 	}
 	
 	//회원 제거. 0번이 첫번째 회원이다.
+//	public boolean removeMember(int memberId) {
+//		for(int i = 0; i < arrayList.size(); i++) {
+//			Member member = arrayList.get(i);	//get() 메서드로 회원을 순차적으로 가져옴.
+//			int tempId = member.getMemberId();	//임시 변수에 저장하고 그 값을 내가 지우려는 회원값과 비교
+//			if(tempId == memberId) {
+//				arrayList.remove(i);
+//				return true;	//return 되면 해당 메서드는 종료된다.
+//			}
+//		}
+//		//위 for 문을 통해 해당하는 id 를 찾지 못했을 경우.
+//		System.out.println(memberId + "가 존재하지 않습니다.");
+//		return false;
+//	}
+	
+	//iterator을 사용하여 회원을 제거하는 메서드
 	public boolean removeMember(int memberId) {
-		for(int i = 0; i < arrayList.size(); i++) {
-			Member member = arrayList.get(i);	//get() 메서드로 회원을 순차적으로 가져옴.
-			int tempId = member.getMemberId();	//임시 변수에 저장하고 그 값을 내가 지우려는 회원값과 비교
+		Iterator<Member> ir = arrayList.iterator();	//iterator 반환
+		while(ir.hasNext()) {
+			Member member = ir.next();
+			int tempId = member.getMemberId();
 			if(tempId == memberId) {
-				arrayList.remove(i);
-				return true;	//return 되면 해당 메서드는 종료된다.
+				arrayList.remove(member);
+				return true;
 			}
 		}
-		//위 for 문을 통해 해당하는 id 를 찾지 못했을 경우.
+		//끝날때까지 삭제하려는 값을 찾지 못한 경우
 		System.out.println(memberId + "가 존재하지 않습니다.");
 		return false;
 	}
