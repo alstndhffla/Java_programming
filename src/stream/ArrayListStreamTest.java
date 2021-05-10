@@ -13,10 +13,11 @@ public class ArrayListStreamTest {
 		sList.add("Edward");
 		sList.add("Jack");
 		
-		Stream<String> stream = sList.stream();
-		stream.forEach(s->System.out.print(s + " "));
+		Stream<String> stream = sList.stream();	//스트림 생성
+		stream.forEach(s->System.out.print(s + " "));	//배열의 요소를 하나씩 출력
 		System.out.println();
 		
+		//스트림 새로 생성.정렬.요소를 하나씩 꺼내 출력
 		sList.stream().sorted().forEach(s->System.out.print(s+ " "));
 	//	sList.stream().map(s->s.length()).forEach(n->System.out.println(n));
 	//	sList.stream().filter(s->s.length() >= 5).forEach(s->System.out.println(s));

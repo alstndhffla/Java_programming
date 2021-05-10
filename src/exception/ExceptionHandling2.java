@@ -17,15 +17,15 @@ public class ExceptionHandling2 {
 		}finally{
 			if(fis != null){
 				try {
-					fis.close();
+					fis.close(); //íŒŒì¼ ì…ë ¥ ìŠ¤íŠ¸ë¦¼ ë‹«ê¸°
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
-			System.out.println("Ç×»ó ¼öÇà µË´Ï´Ù.");
+			System.out.println("í•­ìƒ ìˆ˜í–‰ë©ë‹ˆë‹¤.");
 		}
-		System.out.println("¿©±âµµ ¼öÇàµË´Ï´Ù.");
+		System.out.println("ì—¬ê¸°ë„ ìˆ˜í–‰ë©ë‹ˆë‹¤.");
 	}
 }
 

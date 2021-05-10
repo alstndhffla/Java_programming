@@ -9,22 +9,22 @@ class Outter{
 		
 	Runnable getRunnable(int i){
 
-		int num = 100;
+		int num = 100;	//ì§€ì—­ ë³€ìˆ˜
 		
-		class MyRunnable implements Runnable{
+		class MyRunnable implements Runnable{	//ì§€ì—­ ë‚´ë¶€ í´ë˜ìŠ¤
 
-			int localNum = 10;
+			int localNum = 10;	//ì§€ì—­ ë‚´ë¶€ í´ë˜ìŠ¤ì˜ ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜
 				
 			@Override
 			public void run() {
-				//num = 200;   //¿¡·¯ ³². Áö¿ªº¯¼ö´Â »ó¼ö·Î ¹Ù²ñ
-				//i = 100;     //¿¡·¯ ³². ¸Å°³ º¯¼ö ¿ª½Ã Áö¿ªº¯¼öÃ³·³ »ó¼ö·Î ¹Ù²ñ
+				//num = 200;   //ì§€ì—­ë³€ìˆ˜ëŠ” ìƒìˆ˜ë¡œ ë°”ë€Œë¯€ë¡œ ê°’ì„ ë³€ê²½í•  ìˆ˜ê°€ ì—†ì–´ ì˜¤ë¥˜ ë°œìƒ
+				//i = 100;     //ë§¤ê°œë³€ìˆ˜ë„ ì§€ì—­ ë³€ìˆ˜ì²˜ëŸ¼ ìƒìˆ˜ë¡œ ë°”ë€Œë¯€ë¡œ ê°’ì„ ë³€ê²½í•  ìˆ˜ê°€ ì—†ì–´ ì˜¤ë¥˜ ë°œìƒ
 				System.out.println("i =" + i); 
 				System.out.println("num = " +num);  
 				System.out.println("localNum = " +localNum);
 					
-				System.out.println("outNum = " + outNum + "(¿ÜºÎ Å¬·¡½º ÀÎ½ºÅÏ½º º¯¼ö)");
-				System.out.println("Outter.sNum = " + Outter.sNum + "(¿ÜºÎ Å¬·¡½º Á¤Àû º¯¼ö)");
+				System.out.println("outNum = " + outNum + "(ì™¸ë¶€ í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜)");
+				System.out.println("Outter.sNum = " + Outter.sNum + "(ì™¸ë¶€ í´ë˜ìŠ¤ ì •ì  ë³€ìˆ˜)");
 				}
 			}
 		 return new MyRunnable();
@@ -36,7 +36,7 @@ public class LocalInnerTest {
 	public static void main(String[] args) {
 
 		Outter out = new Outter();
-		Runnable runner = out.getRunnable(10);
-		runner.run();
+		Runnable runner = out.getRunnable(10);	//ë©”ì„œë“œ í˜¸ì¶œ
+		runner.run();	//run()ì´ ì‹¤í–‰ë˜ë©´ì„œ getRunnable()ë©”ì„œë“œì˜ ì§€ì—­ë³€ìˆ˜ê°€ ì‚¬ìš©ë¨.
 	}
 }

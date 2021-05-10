@@ -1,10 +1,11 @@
 package stream;
 
+//스트림 활용하여 여행객의 여행 비용 계산하기
 public class TravelCustomer {
 
-	private String name;   //�̸�
-	private int age;       //����
-	private int price;     //����
+	private String name;   //고객 이름
+	private int age;       //나이
+	private int price;     //가격
 	
 	public TravelCustomer(String name, int age, int price) {
 		this.name = name;
